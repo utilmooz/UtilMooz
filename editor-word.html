@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Editor de Word Online Gratis | UtilMooz</title>
 
@@ -17,698 +15,697 @@ content="Editor de Word online gratis. Abrí, editá y creá documentos Word dir
 <meta name="robots"
 content="index, follow">
 
+
 <!-- =====================================================
-     LIBRERÍAS
+LIBRERÍAS
 ===================================================== -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/9.5.1/docx.umd.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
 <style>
 
 /* =====================================================
-   GENERAL
+GENERAL
 ===================================================== */
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
-
-    background:#f5f7fb;
-
-    color:#172033;
-
-    line-height:1.5;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+line-height:1.5;
 }
 
 
 /* =====================================================
-   HEADER
+HEADER
 ===================================================== */
 
 header{
-    background:#111827;
-
-    color:white;
-
-    padding:20px;
+background:#111827;
+color:white;
+padding:20px;
 }
 
 .header-content{
-    max-width:1200px;
-
-    margin:auto;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-    font-size:26px;
-
-    font-weight:bold;
+font-size:26px;
+font-weight:bold;
 }
 
 .logo span{
-    color:#4f8cff;
+color:#4f8cff;
 }
 
 
 /* =====================================================
-   BOTÓN INICIO
+BOTÓN INICIO
 ===================================================== */
 
 nav{
-    display:flex;
-
-    align-items:center;
+display:flex;
+align-items:center;
 }
 
 nav a.inicio-btn{
 
-    display:inline-flex !important;
+display:inline-flex !important;
 
-    align-items:center !important;
+align-items:center !important;
 
-    justify-content:center !important;
+justify-content:center !important;
 
-    gap:7px !important;
+gap:7px !important;
 
-    padding:10px 17px !important;
+padding:10px 17px !important;
 
-    background:#4f8cff !important;
+background:#4f8cff !important;
 
-    color:#ffffff !important;
+color:#ffffff !important;
 
-    text-decoration:none !important;
+text-decoration:none !important;
 
-    font-family:Arial,sans-serif !important;
+font-family:Arial,sans-serif !important;
 
-    font-size:14px !important;
+font-size:14px !important;
 
-    font-weight:bold !important;
+font-weight:bold !important;
 
-    line-height:1 !important;
+line-height:1 !important;
 
-    border-radius:8px !important;
+border-radius:8px !important;
 
-    border:1px solid rgba(255,255,255,.10) !important;
+border:1px solid rgba(255,255,255,.10) !important;
 
-    transition:.2s;
+transition:.2s;
 }
 
 nav a.inicio-btn:hover{
 
-    background:#3978e8 !important;
+background:#3978e8 !important;
 
-    transform:translateY(-1px);
+transform:translateY(-1px);
 
-    box-shadow:
-    0 4px 12px rgba(79,140,255,.30);
+box-shadow:
+0 4px 12px rgba(79,140,255,.30);
 }
 
 .home-icon{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    width:18px;
+width:18px;
 
-    height:18px;
+height:18px;
 }
 
 
 /* =====================================================
-   CONTENIDO
+CONTENIDO
 ===================================================== */
 
 .container{
 
-    max-width:1200px;
+max-width:1200px;
 
-    margin:40px auto;
+margin:40px auto;
 
-    padding:0 20px 60px;
+padding:0 20px 60px;
 }
 
 h1{
 
-    font-size:36px;
+font-size:36px;
 
-    margin-bottom:12px;
+margin-bottom:12px;
 }
 
 .description{
 
-    color:#667085;
+color:#667085;
 
-    margin-bottom:25px;
+margin-bottom:25px;
 }
 
 
 /* =====================================================
-   CARGA
+CARGA
 ===================================================== */
 
 .upload-box{
 
-    background:white;
+background:white;
 
-    border:2px dashed #cbd5e1;
+border:2px dashed #cbd5e1;
 
-    border-radius:16px;
+border-radius:16px;
 
-    padding:50px 25px;
+padding:50px 25px;
 
-    text-align:center;
+text-align:center;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.2s;
+transition:.2s;
 
-    margin-bottom:25px;
+margin-bottom:25px;
 }
 
 .upload-box:hover{
 
-    border-color:#4f8cff;
+border-color:#4f8cff;
 
-    background:#f8fbff;
+background:#f8fbff;
 }
 
 .upload-icon{
 
-    font-size:52px;
+font-size:52px;
 
-    margin-bottom:15px;
+margin-bottom:15px;
 }
 
 .upload-box h2{
 
-    font-size:22px;
+font-size:22px;
 
-    margin-bottom:8px;
+margin-bottom:8px;
 }
 
 .upload-box p{
 
-    color:#667085;
+color:#667085;
 
-    margin-bottom:20px;
+margin-bottom:20px;
 }
 
 .upload-button{
 
-    display:inline-flex;
+display:inline-flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    padding:13px 22px;
+padding:13px 22px;
 
-    background:#4f8cff;
+background:#4f8cff;
 
-    color:white;
+color:white;
 
-    border-radius:9px;
+border-radius:9px;
 
-    font-weight:bold;
+font-weight:bold;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.2s;
+transition:.2s;
+
+border:none;
+
+font-family:Arial,sans-serif;
+
+font-size:14px;
 }
 
 .upload-button:hover{
 
-    background:#3978e8;
+background:#3978e8;
 }
 
 #fileInput{
 
-    display:none;
+display:none;
 }
 
 
 /* =====================================================
-   EDITOR
+EDITOR
 ===================================================== */
 
 .editor{
 
-    display:none;
+display:none;
 
-    background:white;
+background:white;
 
-    border:1px solid #dfe4ec;
+border:1px solid #dfe4ec;
 
-    border-radius:16px;
+border-radius:16px;
 
-    overflow:hidden;
+overflow:hidden;
 
-    box-shadow:
-    0 8px 30px rgba(0,0,0,.06);
+box-shadow:
+0 8px 30px rgba(0,0,0,.06);
 }
 
 
 /* =====================================================
-   TOOLBAR
+TOOLBAR
 ===================================================== */
 
 .toolbar{
 
-    background:#111827;
+background:#111827;
 
-    padding:10px;
+padding:10px;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    flex-wrap:wrap;
+flex-wrap:wrap;
 
-    gap:6px;
+gap:6px;
 }
 
 .tool-btn{
 
-    border:none;
+border:none;
 
-    background:#1f2937;
+background:#1f2937;
 
-    color:white;
+color:white;
 
-    min-width:38px;
+min-width:38px;
 
-    height:38px;
+height:38px;
 
-    padding:0 10px;
+padding:0 10px;
 
-    border-radius:6px;
+border-radius:6px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    font-weight:bold;
+font-weight:bold;
 
-    font-size:14px;
+font-size:14px;
 
-    transition:.2s;
+transition:.2s;
 }
 
 .tool-btn:hover{
 
-    background:#374151;
+background:#374151;
 }
 
 .tool-btn.active{
 
-    background:#4f8cff;
+background:#4f8cff;
 }
 
 .toolbar select{
 
-    height:38px;
+height:38px;
 
-    border:none;
+border:none;
 
-    border-radius:6px;
+border-radius:6px;
 
-    padding:0 8px;
+padding:0 8px;
 
-    background:#ffffff;
+background:#ffffff;
 
-    color:#172033;
+color:#172033;
 
-    cursor:pointer;
+cursor:pointer;
 }
 
 .toolbar input[type="color"]{
 
-    width:38px;
+width:38px;
 
-    height:38px;
+height:38px;
 
-    border:none;
+border:none;
 
-    padding:2px;
+padding:2px;
 
-    border-radius:6px;
+border-radius:6px;
 
-    cursor:pointer;
+cursor:pointer;
 }
 
 .separator{
 
-    width:1px;
+width:1px;
 
-    height:28px;
+height:28px;
 
-    background:#374151;
+background:#374151;
 
-    margin:0 3px;
+margin:0 3px;
 }
 
 
 /* =====================================================
-   ÁREA DOCUMENTO
+ÁREA DOCUMENTO
 ===================================================== */
 
 .document-area{
 
-    background:#e5e7eb;
+background:#e5e7eb;
 
-    padding:35px;
+padding:35px;
 
-    min-height:700px;
+min-height:700px;
 
-    overflow:auto;
+overflow:auto;
 }
 
 .document{
 
-    width:794px;
+width:794px;
 
-    min-height:1123px;
+min-height:1123px;
 
-    margin:auto;
+margin:auto;
 
-    padding:70px 75px;
+padding:70px 75px;
 
-    background:white;
+background:white;
 
-    box-shadow:
-    0 5px 25px rgba(0,0,0,.15);
+box-shadow:
+0 5px 25px rgba(0,0,0,.15);
 
-    outline:none;
+outline:none;
 
-    color:#111827;
+color:#111827;
 
-    font-family:Arial,sans-serif;
+font-family:Arial,sans-serif;
 
-    font-size:16px;
+font-size:16px;
 
-    line-height:1.6;
+line-height:1.6;
 }
 
 .document:focus{
 
-    outline:none;
+outline:none;
 }
 
 .document h1{
 
-    font-size:32px;
+font-size:32px;
 
-    margin-bottom:20px;
+margin-bottom:20px;
 }
 
 .document h2{
 
-    font-size:25px;
+font-size:25px;
 
-    margin:20px 0 10px;
+margin:20px 0 10px;
 }
 
 .document h3{
 
-    font-size:21px;
+font-size:21px;
 
-    margin:18px 0 8px;
+margin:18px 0 8px;
 }
 
 .document p{
 
-    margin-bottom:12px;
+margin-bottom:12px;
 }
 
 .document img{
 
-    max-width:100%;
+max-width:100%;
 
-    height:auto;
+height:auto;
 
-    display:block;
+display:block;
 
-    margin:12px 0;
+margin:12px 0;
 }
 
 .document ul,
 .document ol{
 
-    margin-left:30px;
+margin-left:30px;
 
-    margin-bottom:15px;
+margin-bottom:15px;
 }
 
 
 /* =====================================================
-   BARRA INFERIOR
+BARRA INFERIOR
 ===================================================== */
 
 .bottom-bar{
 
-    background:#f8fafc;
+background:#f8fafc;
 
-    border-top:1px solid #e2e8f0;
+border-top:1px solid #e2e8f0;
 
-    padding:12px;
+padding:12px;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
-    gap:10px;
+gap:10px;
 
-    flex-wrap:wrap;
+flex-wrap:wrap;
 }
 
 .status{
 
-    font-size:13px;
+font-size:13px;
 
-    color:#667085;
+color:#667085;
 }
 
 .download-btn{
 
-    border:none;
+border:none;
 
-    background:#16a34a;
+background:#16a34a;
 
-    color:white;
+color:white;
 
-    padding:12px 20px;
+padding:12px 20px;
 
-    border-radius:8px;
+border-radius:8px;
 
-    font-size:15px;
+font-size:15px;
 
-    font-weight:bold;
+font-weight:bold;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.2s;
+transition:.2s;
 }
 
 .download-btn:hover{
 
-    background:#15803d;
+background:#15803d;
 
-    transform:translateY(-1px);
+transform:translateY(-1px);
 }
 
 
 /* =====================================================
-   INFORMACIÓN
+INFORMACIÓN
 ===================================================== */
 
 .info{
 
-    margin-top:45px;
+margin-top:45px;
 
-    color:#4b5563;
+color:#4b5563;
 
-    line-height:1.7;
+line-height:1.7;
 }
 
 .info h2{
 
-    color:#172033;
+color:#172033;
 
-    font-size:24px;
+font-size:24px;
 
-    margin:25px 0 10px;
+margin:25px 0 10px;
 }
 
 .info p{
 
-    margin-bottom:15px;
+margin-bottom:15px;
 }
 
 
 /* =====================================================
-   FOOTER
+FOOTER
 ===================================================== */
 
 footer{
 
-    background:#111827;
+background:#111827;
 
-    color:#aaa;
+color:#aaa;
 
-    text-align:center;
+text-align:center;
 
-    padding:30px;
+padding:30px;
 
-    margin-top:20px;
+margin-top:20px;
 }
 
 
 /* =====================================================
-   RESPONSIVE
+RESPONSIVE
 ===================================================== */
 
 @media(max-width:850px){
 
-    .document-area{
+.document-area{
 
-        padding:15px;
-    }
+padding:15px;
+}
 
-    .document{
+.document{
 
-        width:100%;
+width:100%;
 
-        min-height:900px;
+min-height:900px;
 
-        padding:45px 35px;
-    }
+padding:45px 35px;
+}
 
-    h1{
+h1{
 
-        font-size:30px;
-    }
+font-size:30px;
+}
 
 }
 
 @media(max-width:600px){
 
-    header{
+header{
 
-        padding:17px 15px;
-    }
+padding:17px 15px;
+}
 
-    .logo{
+.logo{
 
-        font-size:23px;
-    }
+font-size:23px;
+}
 
-    nav a.inicio-btn{
+nav a.inicio-btn{
 
-        padding:9px 12px !important;
-    }
+padding:9px 12px !important;
+}
 
-    .document-area{
+.document-area{
 
-        padding:8px;
-    }
+padding:8px;
+}
 
-    .document{
+.document{
 
-        padding:30px 22px;
+padding:30px 22px;
 
-        font-size:15px;
+font-size:15px;
 
-        min-height:700px;
-    }
+min-height:700px;
+}
 
-    .toolbar{
+.toolbar{
 
-        justify-content:center;
-    }
+justify-content:center;
+}
 
-    .tool-btn{
+.tool-btn{
 
-        height:36px;
+height:36px;
 
-        min-width:36px;
+min-width:36px;
 
-        padding:0 8px;
-    }
+padding:0 8px;
+}
 
 }
 
 
 /* =====================================================
-   IMPRESIÓN
+IMPRESIÓN
 ===================================================== */
 
 @media print{
 
-    body{
+body{
 
-        background:white;
-    }
+background:white;
+}
 
-    header,
-    .toolbar,
-    .bottom-bar,
-    footer,
-    .info{
+header,
+.toolbar,
+.bottom-bar,
+footer,
+.info{
 
-        display:none !important;
-    }
+display:none !important;
+}
 
-    .container{
+.container{
 
-        margin:0;
+margin:0;
 
-        padding:0;
-    }
+padding:0;
+}
 
-    .editor{
+.editor{
 
-        display:block;
+display:block;
 
-        border:none;
+border:none;
 
-        box-shadow:none;
-    }
+box-shadow:none;
+}
 
-    .document-area{
+.document-area{
 
-        padding:0;
+padding:0;
 
-        background:white;
-    }
+background:white;
+}
 
-    .document{
+.document{
 
-        box-shadow:none;
+box-shadow:none;
 
-        margin:0;
+margin:0;
 
-        width:100%;
-    }
+width:100%;
+}
 
 }
 
@@ -716,10 +713,12 @@ footer{
 
 </head>
 
+
 <body>
 
+
 <!-- =====================================================
-     HEADER
+HEADER
 ===================================================== -->
 
 <header>
@@ -769,8 +768,9 @@ stroke-linejoin="round">
 
 </header>
 
+
 <!-- =====================================================
-     CONTENIDO
+CONTENIDO
 ===================================================== -->
 
 <main class="container">
@@ -787,8 +787,9 @@ en formato Word.
 
 </p>
 
+
 <!-- =====================================================
-     CARGAR DOCUMENTO
+CARGAR DOCUMENTO
 ===================================================== -->
 
 <div
@@ -824,11 +825,10 @@ for="fileInput">
 <input
 type="file"
 id="fileInput"
-accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 
->
-
-<br><br>
+<br>
+<br>
 
 <button
 class="upload-button"
@@ -841,19 +841,22 @@ onclick="nuevoDocumento()">
 
 </div>
 
+
 <!-- =====================================================
-     EDITOR
+EDITOR
 ===================================================== -->
 
 <div
 class="editor"
 id="editor">
 
+
 <!-- =====================================================
-     TOOLBAR
+TOOLBAR
 ===================================================== -->
 
 <div class="toolbar">
+
 
 <button
 class="tool-btn"
@@ -865,6 +868,7 @@ title="Negrita">
 
 </button>
 
+
 <button
 class="tool-btn"
 type="button"
@@ -874,6 +878,7 @@ title="Cursiva">
 <i>I</i>
 
 </button>
+
 
 <button
 class="tool-btn"
@@ -885,7 +890,9 @@ title="Subrayado">
 
 </button>
 
+
 <div class="separator"></div>
+
 
 <select
 id="formatSelect"
@@ -909,6 +916,7 @@ Título 3
 </option>
 
 </select>
+
 
 <select
 id="fontSize"
@@ -946,6 +954,7 @@ selected>
 
 </select>
 
+
 <input
 type="color"
 id="textColor"
@@ -953,7 +962,9 @@ value="#111827"
 onchange="cambiarColor(this.value)"
 title="Color del texto">
 
+
 <div class="separator"></div>
+
 
 <button
 class="tool-btn"
@@ -965,6 +976,7 @@ title="Alinear izquierda">
 
 </button>
 
+
 <button
 class="tool-btn"
 type="button"
@@ -974,6 +986,7 @@ title="Centrar">
 ☷
 
 </button>
+
 
 <button
 class="tool-btn"
@@ -985,7 +998,9 @@ title="Alinear derecha">
 
 </button>
 
+
 <div class="separator"></div>
+
 
 <button
 class="tool-btn"
@@ -997,6 +1012,7 @@ title="Lista">
 
 </button>
 
+
 <button
 class="tool-btn"
 type="button"
@@ -1007,7 +1023,9 @@ title="Lista numerada">
 
 </button>
 
+
 <div class="separator"></div>
+
 
 <button
 class="tool-btn"
@@ -1019,6 +1037,7 @@ title="Deshacer">
 
 </button>
 
+
 <button
 class="tool-btn"
 type="button"
@@ -1028,6 +1047,7 @@ title="Rehacer">
 ↷
 
 </button>
+
 
 <button
 class="tool-btn"
@@ -1039,6 +1059,7 @@ title="Insertar imagen">
 
 </button>
 
+
 <button
 class="tool-btn"
 type="button"
@@ -1049,10 +1070,12 @@ title="Imprimir">
 
 </button>
 
+
 </div>
 
+
 <!-- =====================================================
-     DOCUMENTO
+DOCUMENTO
 ===================================================== -->
 
 <div class="document-area">
@@ -1075,8 +1098,9 @@ Comenzá a escribir aquí...
 
 </div>
 
+
 <!-- =====================================================
-     BARRA INFERIOR
+BARRA INFERIOR
 ===================================================== -->
 
 <div class="bottom-bar">
@@ -1088,6 +1112,7 @@ id="status">
 Documento listo para editar.
 
 </div>
+
 
 <button
 class="download-btn"
@@ -1102,8 +1127,9 @@ onclick="descargarWord()">
 
 </div>
 
+
 <!-- =====================================================
-     INFORMACIÓN SEO
+INFORMACIÓN SEO
 ===================================================== -->
 
 <section class="info">
@@ -1120,6 +1146,7 @@ Microsoft Word para realizar las funciones básicas de edición.
 
 </p>
 
+
 <h2>
 Abrir archivos DOCX
 </h2>
@@ -1130,6 +1157,7 @@ Podés cargar documentos DOCX existentes y editar su contenido
 directamente desde el navegador.
 
 </p>
+
 
 <h2>
 Crear documentos Word
@@ -1142,9 +1170,9 @@ títulos, listas, imágenes y diferentes formatos.
 
 </p>
 
+
 <h2>
 ¿Dónde se procesa el documento?
-
 </h2>
 
 <p>
@@ -1159,8 +1187,9 @@ propio de UtilMooz.
 
 </main>
 
+
 <!-- =====================================================
-     FOOTER
+FOOTER
 ===================================================== -->
 
 <footer>
@@ -1169,10 +1198,11 @@ propio de UtilMooz.
 
 </footer>
 
+
 <script>
 
 /* =====================================================
-   ELEMENTOS
+ELEMENTOS
 ===================================================== */
 
 const fileInput =
@@ -1192,7 +1222,7 @@ document.getElementById("status");
 
 
 /* =====================================================
-   ARCHIVO DOCX
+ARCHIVO DOCX
 ===================================================== */
 
 fileInput.addEventListener(
@@ -1214,7 +1244,7 @@ function(){
 
 
 /* =====================================================
-   ABRIR WORD
+ABRIR WORD
 ===================================================== */
 
 async function abrirWord(archivo){
@@ -1225,6 +1255,21 @@ async function abrirWord(archivo){
             "Abriendo documento..."
         );
 
+
+        if(
+            !archivo ||
+            !archivo.name
+            .toLowerCase()
+            .endsWith(".docx")
+        ){
+
+            throw new Error(
+                "El archivo seleccionado no es DOCX."
+            );
+
+        }
+
+
         const arrayBuffer =
         await archivo.arrayBuffer();
 
@@ -1232,7 +1277,7 @@ async function abrirWord(archivo){
         const resultado =
         await mammoth.convertToHtml(
             {
-                arrayBuffer:arrayBuffer
+                arrayBuffer: arrayBuffer
             }
         );
 
@@ -1240,11 +1285,6 @@ async function abrirWord(archivo){
         documentArea.innerHTML =
         resultado.value;
 
-
-        /*
-           Asegurar que las imágenes
-           no se salgan del documento.
-        */
 
         documentArea
         .querySelectorAll("img")
@@ -1264,8 +1304,12 @@ async function abrirWord(archivo){
         uploadBox.style.display =
         "none";
 
+
         editor.style.display =
         "block";
+
+
+        documentArea.focus();
 
 
         mostrarEstado(
@@ -1275,11 +1319,16 @@ async function abrirWord(archivo){
 
     }catch(error){
 
-        console.error(error);
+        console.error(
+            "Error al abrir DOCX:",
+            error
+        );
+
 
         alert(
             "No se pudo abrir el documento Word. Verificá que sea un archivo DOCX válido."
         );
+
 
         mostrarEstado(
             "Error al abrir el documento."
@@ -1291,20 +1340,19 @@ async function abrirWord(archivo){
 
 
 /* =====================================================
-   NUEVO DOCUMENTO
+NUEVO DOCUMENTO
 ===================================================== */
 
 function nuevoDocumento(){
 
     documentArea.innerHTML =
-
     "<h1>Nuevo documento</h1>" +
-
     "<p>Comenzá a escribir aquí...</p>";
 
 
     uploadBox.style.display =
     "none";
+
 
     editor.style.display =
     "block";
@@ -1321,16 +1369,31 @@ function nuevoDocumento(){
 
 
 /* =====================================================
-   FORMATO
+FORMATO
 ===================================================== */
 
 function formato(comando){
 
-    document.execCommand(
-        comando,
-        false,
-        null
-    );
+    documentArea.focus();
+
+
+    try{
+
+        document.execCommand(
+            comando,
+            false,
+            null
+        );
+
+    }catch(error){
+
+        console.error(
+            "Error de formato:",
+            error
+        );
+
+    }
+
 
     documentArea.focus();
 
@@ -1338,16 +1401,31 @@ function formato(comando){
 
 
 /* =====================================================
-   FORMATO DE BLOQUE
+FORMATO DE BLOQUE
 ===================================================== */
 
 function cambiarFormato(valor){
 
-    document.execCommand(
-        "formatBlock",
-        false,
-        valor
-    );
+    documentArea.focus();
+
+
+    try{
+
+        document.execCommand(
+            "formatBlock",
+            false,
+            valor
+        );
+
+    }catch(error){
+
+        console.error(
+            "Error de formato de bloque:",
+            error
+        );
+
+    }
+
 
     documentArea.focus();
 
@@ -1355,16 +1433,31 @@ function cambiarFormato(valor){
 
 
 /* =====================================================
-   TAMAÑO
+TAMAÑO
 ===================================================== */
 
 function cambiarTamaño(valor){
 
-    document.execCommand(
-        "fontSize",
-        false,
-        valor
-    );
+    documentArea.focus();
+
+
+    try{
+
+        document.execCommand(
+            "fontSize",
+            false,
+            valor
+        );
+
+    }catch(error){
+
+        console.error(
+            "Error al cambiar tamaño:",
+            error
+        );
+
+    }
+
 
     documentArea.focus();
 
@@ -1372,16 +1465,31 @@ function cambiarTamaño(valor){
 
 
 /* =====================================================
-   COLOR
+COLOR
 ===================================================== */
 
 function cambiarColor(color){
 
-    document.execCommand(
-        "foreColor",
-        false,
-        color
-    );
+    documentArea.focus();
+
+
+    try{
+
+        document.execCommand(
+            "foreColor",
+            false,
+            color
+        );
+
+    }catch(error){
+
+        console.error(
+            "Error al cambiar color:",
+            error
+        );
+
+    }
+
 
     documentArea.focus();
 
@@ -1389,7 +1497,7 @@ function cambiarColor(color){
 
 
 /* =====================================================
-   INSERTAR IMAGEN
+INSERTAR IMAGEN
 ===================================================== */
 
 function insertarImagen(){
@@ -1397,8 +1505,10 @@ function insertarImagen(){
     const input =
     document.createElement("input");
 
+
     input.type =
     "file";
+
 
     input.accept =
     "image/*";
@@ -1431,27 +1541,59 @@ function insertarImagen(){
             documentArea.focus();
 
 
-            document.execCommand(
-                "insertImage",
-                false,
-                event.target.result
-            );
+            try{
+
+                document.execCommand(
+                    "insertImage",
+                    false,
+                    event.target.result
+                );
 
 
-            document
-            .querySelectorAll(
-                "#document img"
-            )
-            .forEach(
-                function(img){
+                document
+                .querySelectorAll(
+                    "#document img"
+                )
+                .forEach(
+                    function(img){
 
-                    img.style.maxWidth =
-                    "100%";
+                        img.style.maxWidth =
+                        "100%";
 
-                    img.style.height =
-                    "auto";
+                        img.style.height =
+                        "auto";
 
-                }
+                    }
+                );
+
+
+                mostrarEstado(
+                    "Imagen insertada correctamente."
+                );
+
+
+            }catch(error){
+
+                console.error(
+                    "Error al insertar imagen:",
+                    error
+                );
+
+
+                alert(
+                    "No se pudo insertar la imagen."
+                );
+
+            }
+
+        };
+
+
+        reader.onerror =
+        function(){
+
+            alert(
+                "No se pudo leer la imagen."
             );
 
         };
@@ -1470,7 +1612,308 @@ function insertarImagen(){
 
 
 /* =====================================================
-   DESCARGAR DOCX
+CONVERTIR HTML A DOCX
+===================================================== */
+
+function crearParrafosDesdeHTML(){
+
+    const elementos =
+    documentArea.querySelectorAll(
+        "h1,h2,h3,p,li"
+    );
+
+
+    const children = [];
+
+
+    if(
+        !elementos.length
+    ){
+
+        children.push(
+
+            new docx.Paragraph({
+
+                children:[
+
+                    new docx.TextRun({
+
+                        text:
+                        documentArea.innerText ||
+                        ""
+
+                    })
+
+                ]
+
+            })
+
+        );
+
+
+        return children;
+
+    }
+
+
+    elementos.forEach(
+        function(elemento){
+
+            const contenido =
+            elemento.innerText || "";
+
+
+            if(
+                !contenido.trim()
+            ){
+
+                return;
+
+            }
+
+
+            let heading =
+            undefined;
+
+
+            if(
+                elemento.tagName === "H1"
+            ){
+
+                heading =
+                docx.HeadingLevel.HEADING_1;
+
+            }
+
+
+            if(
+                elemento.tagName === "H2"
+            ){
+
+                heading =
+                docx.HeadingLevel.HEADING_2;
+
+            }
+
+
+            if(
+                elemento.tagName === "H3"
+            ){
+
+                heading =
+                docx.HeadingLevel.HEADING_3;
+
+            }
+
+
+            const runs = [];
+
+
+            function procesarNodo(nodo){
+
+                if(
+                    nodo.nodeType ===
+                    Node.TEXT_NODE
+                ){
+
+                    if(
+                        nodo.textContent
+                    ){
+
+                        runs.push(
+
+                            new docx.TextRun({
+
+                                text:
+                                nodo.textContent
+
+                            })
+
+                        );
+
+                    }
+
+                    return;
+
+                }
+
+
+                if(
+                    nodo.nodeType !==
+                    Node.ELEMENT_NODE
+                ){
+
+                    return;
+
+                }
+
+
+                const tag =
+                nodo.tagName
+                .toLowerCase();
+
+
+                const esNegrita =
+                tag === "strong" ||
+                tag === "b";
+
+
+                const esCursiva =
+                tag === "em" ||
+                tag === "i";
+
+
+                const esSubrayado =
+                tag === "u";
+
+
+                if(
+                    esNegrita ||
+                    esCursiva ||
+                    esSubrayado
+                ){
+
+                    const texto =
+                    nodo.innerText ||
+                    nodo.textContent ||
+                    "";
+
+
+                    if(
+                        texto
+                    ){
+
+                        runs.push(
+
+                            new docx.TextRun({
+
+                                text:
+                                texto,
+
+                                bold:
+                                esNegrita,
+
+                                italics:
+                                esCursiva,
+
+                                underline:
+                                esSubrayado
+
+                            })
+
+                        );
+
+                    }
+
+
+                    return;
+
+                }
+
+
+                nodo.childNodes.forEach(
+                    procesarNodo
+                );
+
+            }
+
+
+            elemento.childNodes.forEach(
+                procesarNodo
+            );
+
+
+            if(
+                !runs.length
+            ){
+
+                runs.push(
+
+                    new docx.TextRun({
+
+                        text:
+                        contenido
+
+                    })
+
+                );
+
+            }
+
+
+            const opciones = {
+
+                children:
+                runs
+
+            };
+
+
+            if(
+                heading
+            ){
+
+                opciones.heading =
+                heading;
+
+            }
+
+
+            if(
+                elemento.tagName === "LI"
+            ){
+
+                const lista =
+                elemento.closest("ol");
+
+
+                if(
+                    lista
+                ){
+
+                    opciones.numbering = {
+
+                        reference:
+                        "default-numbering",
+
+                        level:
+                        0
+
+                    };
+
+                }else{
+
+                    opciones.bullet = {
+
+                        level:
+                        0
+
+                    };
+
+                }
+
+            }
+
+
+            children.push(
+
+                new docx.Paragraph(
+                    opciones
+                )
+
+            );
+
+        }
+    );
+
+
+    return children;
+
+}
+
+
+/* =====================================================
+DESCARGAR DOCX
 ===================================================== */
 
 async function descargarWord(){
@@ -1482,126 +1925,45 @@ async function descargarWord(){
         );
 
 
-        const texto =
-        documentArea.innerText;
-
-
         /*
-           Crear documento con la librería DOCX.
+           Verificar que DOCX.js
+           esté cargado.
         */
 
-        const {
-            Document,
-            Packer,
-            Paragraph,
-            TextRun,
-            HeadingLevel
-        } = docx;
+        if(
+            typeof docx ===
+            "undefined"
+        ){
 
-
-        const children = [];
-
-
-        /*
-           Convertimos los elementos HTML
-           principales en párrafos Word.
-        */
-
-        const elementos =
-        documentArea.querySelectorAll(
-            "h1,h2,h3,p,li"
-        );
-
-
-        if(!elementos.length){
-
-            children.push(
-                new Paragraph({
-                    children:[
-                        new TextRun(
-                            texto
-                        )
-                    ]
-                })
-            );
-
-        }else{
-
-            elementos.forEach(
-                function(elemento){
-
-                    const contenido =
-                    elemento.innerText || "";
-
-
-                    if(
-                        !contenido.trim()
-                    ){
-
-                        return;
-
-                    }
-
-
-                    let heading =
-                    undefined;
-
-
-                    if(
-                        elemento.tagName ===
-                        "H1"
-                    ){
-
-                        heading =
-                        HeadingLevel.HEADING_1;
-
-                    }
-
-
-                    if(
-                        elemento.tagName ===
-                        "H2"
-                    ){
-
-                        heading =
-                        HeadingLevel.HEADING_2;
-
-                    }
-
-
-                    if(
-                        elemento.tagName ===
-                        "H3"
-                    ){
-
-                        heading =
-                        HeadingLevel.HEADING_3;
-
-                    }
-
-
-                    children.push(
-
-                        new Paragraph({
-
-                            heading:heading,
-
-                            children:[
-
-                                new TextRun({
-                                    text:contenido
-                                })
-
-                            ]
-
-                        })
-
-                    );
-
-                }
+            throw new Error(
+                "La librería DOCX no está disponible."
             );
 
         }
+
+
+        /*
+           Verificar FileSaver.
+        */
+
+        if(
+            typeof saveAs !==
+            "function"
+        ){
+
+            throw new Error(
+                "La librería FileSaver no está disponible."
+            );
+
+        }
+
+
+        /*
+           Crear contenido Word.
+        */
+
+        const children =
+        crearParrafosDesdeHTML();
 
 
         /*
@@ -1609,62 +1971,66 @@ async function descargarWord(){
         */
 
         const documento =
-        new Document({
+        new docx.Document({
 
-            sections:[{
+            creator:
+            "UtilMooz",
 
-                properties:{},
+            title:
+            "Documento creado con UtilMooz",
 
-                children:children
+            description:
+            "Documento Word creado con el editor online de UtilMooz.",
 
-            }]
+            sections:[
+
+                {
+
+                    properties:{},
+
+                    children:
+                    children
+
+                }
+
+            ]
 
         });
 
 
         /*
-           Generar Blob.
+           Convertir a Blob.
         */
 
         const blob =
-        await Packer.toBlob(
+        await docx.Packer.toBlob(
             documento
         );
 
 
-        const url =
-        URL.createObjectURL(
-            blob
-        );
+        /*
+           Verificar archivo.
+        */
+
+        if(
+            !blob ||
+            blob.size === 0
+        ){
+
+            throw new Error(
+                "El archivo generado está vacío."
+            );
+
+        }
 
 
-        const enlace =
-        document.createElement(
-            "a"
-        );
+        /*
+           Descargar archivo.
+        */
 
-
-        enlace.href =
-        url;
-
-
-        enlace.download =
-        "UtilMooz-documento.docx";
-
-
-        document.body.appendChild(
-            enlace
-        );
-
-
-        enlace.click();
-
-
-        enlace.remove();
-
-
-        URL.revokeObjectURL(
-            url
+        saveAs(
+            blob,
+            "UtilMooz-documento.docx"
         );
 
 
@@ -1675,15 +2041,21 @@ async function descargarWord(){
 
     }catch(error){
 
-        console.error(error);
-
-        alert(
-            "No se pudo generar el archivo DOCX."
+        console.error(
+            "ERROR AL GENERAR DOCX:",
+            error
         );
 
 
         mostrarEstado(
             "Error al generar el documento."
+        );
+
+
+        alert(
+            "No se pudo generar el archivo DOCX.\n\n" +
+            "Detalle: " +
+            error.message
         );
 
     }
@@ -1692,7 +2064,7 @@ async function descargarWord(){
 
 
 /* =====================================================
-   ESTADO
+ESTADO
 ===================================================== */
 
 function mostrarEstado(texto){
@@ -1704,7 +2076,7 @@ function mostrarEstado(texto){
 
 
 /* =====================================================
-   DRAG & DROP
+DRAG & DROP
 ===================================================== */
 
 uploadBox.addEventListener(
@@ -1712,6 +2084,7 @@ uploadBox.addEventListener(
 function(event){
 
     event.preventDefault();
+
 
     uploadBox.style.borderColor =
     "#4f8cff";
@@ -1735,6 +2108,7 @@ function(event){
 
     event.preventDefault();
 
+
     uploadBox.style.borderColor =
     "#cbd5e1";
 
@@ -1745,11 +2119,9 @@ function(event){
 
     if(
         archivo &&
-        (
-            archivo.name
-            .toLowerCase()
-            .endsWith(".docx")
-        )
+        archivo.name
+        .toLowerCase()
+        .endsWith(".docx")
     ){
 
         abrirWord(
@@ -1768,7 +2140,7 @@ function(event){
 
 
 /* =====================================================
-   GUARDADO AUTOMÁTICO DEL ESTADO
+GUARDADO AUTOMÁTICO DEL ESTADO
 ===================================================== */
 
 documentArea.addEventListener(
@@ -1782,8 +2154,80 @@ function(){
 });
 
 
+/* =====================================================
+ATAJO CTRL + S
+===================================================== */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+    if(
+        (
+            event.ctrlKey ||
+            event.metaKey
+        ) &&
+        event.key.toLowerCase() === "s"
+    ){
+
+        event.preventDefault();
+
+
+        descargarWord();
+
+    }
+
+});
+
+
+/* =====================================================
+VERIFICAR LIBRERÍAS
+===================================================== */
+
+window.addEventListener(
+"load",
+function(){
+
+    if(
+        typeof mammoth ===
+        "undefined"
+    ){
+
+        console.error(
+            "Mammoth.js no pudo cargarse."
+        );
+
+    }
+
+
+    if(
+        typeof docx ===
+        "undefined"
+    ){
+
+        console.error(
+            "DOCX.js no pudo cargarse."
+        );
+
+    }
+
+
+    if(
+        typeof saveAs ===
+        "undefined"
+    ){
+
+        console.error(
+            "FileSaver.js no pudo cargarse."
+        );
+
+    }
+
+});
+
 </script>
 
 </body>
 
 </html>
+
